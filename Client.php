@@ -6,10 +6,10 @@ class Client
 {
     public function index()
     {
-        $add = new App\Factory\Sub();
-        $add->setNumberA(1);
-        $add->setNumberB(3);
-        echo $add->getResult();
+        $factory = (new App\Factory\AddFactory())->create();
+        $factory->setNumberA(5);
+        $factory->setNumberB(3);
+        echo $factory->getResult();
     }
 }
 
