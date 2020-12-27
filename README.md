@@ -5,6 +5,7 @@
 
 ## 结构型
 - 适配器模式
-- 装饰器模式
+- [装饰器模式](https://github.com/echoou2020/pattern/tree/master/App/Structural/Decorator)
+- [桥接模式](https://github.com/echoou2020/pattern/tree/master/App/Structural/Bridge)
 ## 行为型
 - [策略模式](https://github.com/echoou2020/pattern/tree/master/App/Creational/Strategy)
