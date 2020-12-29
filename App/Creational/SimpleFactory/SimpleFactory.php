@@ -5,8 +5,20 @@ namespace App\Creational\SimpleFactory;
 
 class SimpleFactory
 {
-    public function createBicycle()
+    static public function createPhone($brand)
     {
-        return new Bicycle();
+        switch ($brand) {
+            case 'Xiaomi':
+                return new Xiaomi();
+                break;
+            case 'Huawei':
+                return new Huawei();
+                break;
+            case 'Iphone':
+                return new Iphone();
+                break;
+            default:
+                return new Shanzhaiji();
+        }
     }
 }
