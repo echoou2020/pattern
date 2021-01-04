@@ -8,20 +8,19 @@
 class StrategyTest extends \PHPUnit\Framework\TestCase
 {
 
-    public function testGetCommistion()
+    public function testCustomer()
     {
         $price = 100;
 
-        $agent = new \App\Creational\Strategy\Agent();
-        $customer = new \App\Creational\Strategy\Customer();
-        $commistion = new \App\Creational\Strategy\Commistion();
-        $commistion->setUser($agent, $price);
-        $agentCommistion = $commistion->getCommistion();
+        $vipCutomer = new \App\Creational\Strategy\VipCustomer();
+        $normalCustomer = new \App\Creational\Strategy\NormalCustomer();
 
-        $commistion->setUser($customer, $price);
-        $customerCommiston = $commistion->getCommistion();
+        $cashier = new \App\Creational\Strategy\Cashier();
 
-        $this->assertEquals($price*0.8, $agentCommistion);
-        $this->assertEquals($price*0.5, $customerCommiston);
+        $cashier->setStrategy($vipCutomer);
+        $this->assertEquals(95, $cashier->getMoney($price));
+
+        $cashier->setStrategy($normalCustomer);
+        $this->assertEquals(100, $cashier->getMoney($price));
     }
 }
